@@ -15,9 +15,13 @@ name: Publish Book and Article as a GH Release
 # package.json: template/                 (sed template->$(THEME) and VERSION->$(VERSION)
 # server.js:    template/                 (as-is from repo)
 
+# Note: xxx this workflow does not publish to npm for now
+
+# not triggering on branche pushes
+# note that this will trigger only once if tags are pushed in a batch
 on:
   push:
-    branches: [ main ]
+    # branches: [ main ]
     tags: [ '*' ]
 
 jobs:
